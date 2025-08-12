@@ -1,0 +1,24 @@
+# Cache y compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+.venv/
+venv/
+
+# Variables de entorno
+.env
+
+# Archivos temporales de sistema
+.DS_Store
+Thumbs.db
+
+# Datos temporales
+data/docs/*.tmp
+data/docs/*.log
+data/docs/~$*.docx
+
+# Carpeta de documentos (opcional si no quieres subir PDFs)
+# data/docs/
