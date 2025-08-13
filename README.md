@@ -6,9 +6,10 @@ Muchas gracias por el apoyo.
 Lee PDFs/DOCX locales, busca con TF-IDF, responde con límite de 300 palabras y lista fuentes.
 
 ## Quickstart
-```bash
-python -m venv .venv && source .venv/bin/activate  # (Windows: .venv\Scripts\activate)
-pip install -r requirements.txt
-mkdir -p data/docs
-# coloca aquí tus PDFs/DOCX
-streamlit run app/main.py
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+###```bash
+###python -m venv .venv && source .venv/bin/activate  # (Windows: .venv\Scripts\activate)
+###pip install -r requirements.txt
+###mkdir -p data/docs
+#### coloca aquí tus PDFs/DOCX
+###streamlit run app/main.py
