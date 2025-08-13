@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GOBI – Web</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🤖 GOBI</h1>
+    <p class="subtitle">Busco en tus PDFs/DOCX y respondo (máx. 300 palabras) con enlaces a la fuente.</p>
+
+    <div id="chat">
+      <div class="msg bot">¡Hola! Soy GOBI. ¿En qué puedo ayudarte hoy?</div>
+    </div>
+
+    <form id="ask-form">
+      <input id="q" type="text" placeholder="Escribe tu consulta..." autocomplete="off" />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="sources"></div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

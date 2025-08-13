@@ -1,0 +1,43 @@
+const form = document.getElementById("ask-form");
+const input = document.getElementById("q");
+const chat = document.getElementById("chat");
+const sources = document.getElementById("sources");
+
+function addMsg(who, text) {
+  const div = document.createElement("div");
+  div.className = "msg " + (who === "bot" ? "bot" : "user");
+  div.textContent = text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const q = input.value.trim();
+  if (!q) return;
+  addMsg("user", q);
+  input.value = "";
+
+  const res = await fetch("/ask", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({ query: q })
+  });
+  const data = await res.json();
+  addMsg("bot", data.answer || "Sin respuesta");
+  sources.innerHTML = "";
+  if (data.sources && data.sources.length) {
+    const ul = document.createElement("ul");
+    data.sources.forEach(s => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = s.path;
+      a.textContent = s.name;
+      a.target = "_blank";
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    sources.appendChild(document.createElement("hr"));
+    sources.appendChild(ul);
+  }
+});
